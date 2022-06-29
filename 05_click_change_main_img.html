@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: auto;
+            width: 95%;
+            max-width: 1140px;
+        }
+        .img-fluid{
+            width: 100%;
+        }
+        .main-img{
+            margin-bottom: 10px;
+        }
+        .thumbnails{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .thumbnails>img{
+            width: 100px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border:2px solid white;
+            cursor: pointer;
+        }
+        .thumbnails>img.active{
+            border:2px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-img"><img class="img-fluid" src="public/images/shiitake1.jpg" alt=""></div>
+        <div class="thumbnails">
+            <img class="active" src="public/images/shiitake1.jpg" alt="">
+            <img class="" src="public/images/shiitake2.jpg" alt="">
+            <img class="" src="public/images/shiitake3.jpg" alt="">
+            <img class="" src="public/images/shiitake4.jpg" alt="">
+           
+        </div>
+    </div>
+
+
+    <!-- jquery主程式 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $('.thumbnails>img').on('click', function(e){
+            // 主圖src屬性(attribute) 替換成 當前點擊縮圖的src
+            $('.main-img>img').attr('src', $(this).attr('src'))
+            $(this).addClass('active')
+            $(this).siblings().removeClass('active')
+
+        }) // .thumbnails>img end
+
+
+
+    </script>
+</body>
+</html>

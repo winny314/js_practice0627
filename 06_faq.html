@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <style>
+        
+        .question-content{
+            border: 1px solid rgb(143, 143, 143);
+            border-radius: 2px;
+            margin-bottom: 20px;
+            line-height: 20px;
+            padding: 10px 40px 10px 10px ;
+            cursor: pointer;
+        
+
+        }
+        .question-content.active .answer{
+            display: block;
+        }
+        .question-content.active .icon-arrow{
+            transform: rotate(180deg);
+        }
+
+        .answer{
+            display: none;
+        }
+
+        .question{
+            position: relative;
+        }
+        .icon-arrow{
+            transition: transform .3s;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            /* background-color: rgb(255, 255, 255); */
+            right: -35px;
+            top: -5px;
+
+        }
+
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="question-content">
+            <div class="question">
+                q01
+                <div class="icon-arrow"><i class="fa-solid fa-square-caret-down"></i></div>
+            </div>
+            <div class="answer">a01</div>
+        </div>
+        <div class="question-content">
+            <div class="question">
+                q02
+                <div class="icon-arrow"><i class="fa-solid fa-square-caret-down"></i></div>
+            </div>
+            <div class="answer">a02</div>
+        </div>
+        <div class="question-content">
+            <div class="question">
+                q03
+                <div class="icon-arrow"><i class="fa-solid fa-square-caret-down"></i></div>
+            </div>
+            <div class="answer">a03</div>
+        </div>
+        <div class="question-content">
+            <div class="question">
+                Q4：fdjnsalilf?
+                <div class="icon-arrow"><i class="fa-solid fa-square-caret-down"></i></div>
+            </div>
+            <div class="answer">a04</div>
+        </div>
+        <div class="question-content"> 
+            <div class="question">
+                Q5：十年生死兩茫茫，不思量，自難忘。——蘇軾〈江城子〉?
+                <div class="icon-arrow"><i class="fa-solid fa-square-caret-down"></i></div>
+            </div>
+            <div class="answer">asjj;ieajfkld;;jkl;wofjiosjfskja34iwjkfsakljdkjialwedkjkslajilw</div>
+        </div>
+    </div>
+        <!-- jquery主程式 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+        <script>
+            $('.question-content').on('click', function(){
+                $(this).addClass('active')    
+                //也可用 $(this).toggleClass('active')  
+                $(this).siblings().removeClass('active')
+            })
+            // .question-content end
+
+
+        </script>
+
+</body>
+</html>

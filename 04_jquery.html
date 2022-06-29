@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li.active{
+            color:red;
+        }
+        #box{
+            width: 100px;
+            line-height: 100px;
+            background-color: lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>點按項目切換顏色</p>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+    <a id="btn-box-switch" href="javascript:;">點按顯示/關閉盒子</a>
+    <div id="box">box</div>
+    <!-- jquery主程式 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <!-- 自定義 -->
+    <script>
+        // for(let num = 0; num < document.getElementsByTagName('li').length; num++){
+        //     let li = document.getElementsByTagName('li')[num].classList.add('active')
+        // }
+        // $('ul>li').addClass('active')
+        $('ul>li').on('click', addRedText)
+
+        function addRedText(){
+            $(this).toggleClass('active')
+        } // addRedText end
+
+        // $('#btn-box-switch').on('click', openBox)
+        $('#btn-box-switch').on('click', function(){
+            $('#box').fadeToggle()
+            //toggle show/hide切換
+        }) // #btn-box-switch end
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>父元素相對定位/子元素絕對定位</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .parent{
+            height: 500px;
+            background-color: lightskyblue;
+            position: relative;
+            /* 如果子元素超出父層範圍 */
+            overflow: hidden;
+        }
+        .parent::before{
+            content: '';
+            width: 100%;
+            height: 50px;
+            background-color: green;
+            position: absolute;
+            right:0px;
+            bottom:0px;
+            /* transform: rotate(45deg); */
+            /* opacity:.3; */
+            z-index: 1;
+        }
+        .child{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: lightpink;
+            transform: rotate(30deg);
+            right:0px;
+            bottom:0px;
+            transition: all .3s;
+        }
+        .child:hover{
+            bottom:40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">user1</div>
+    </div>
+</body>
+</html>
